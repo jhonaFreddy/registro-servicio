@@ -15,7 +15,7 @@ const URL = getApiUrl("schools");
  */
 
 /**
- * Get all Countries.
+ * Get all Schools.
  * @returns {{ action: Promise<School[]>, cancel: function }}
  *  - `action` {Promise<School[]>}
  *  - `cancel` {function}
