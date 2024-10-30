@@ -2,21 +2,19 @@ import { addRequest } from "./config";
 import { getApiUrl } from "../utils/url.utils";
 const URL = getApiUrl("users");
 
-
 /**
  * @typedef {Object} UserData
- * @property {string} f_name 
- * @property {string} s_name 
+ * @property {string} f_name
+ * @property {string} s_name
  * @property {string} f_lastname
  * @property {string} s_lastname
  */
 
 /**
  * @typedef {Object} UserAccount
- * @property {string} email 
+ * @property {string} email
  * @property {number} role_id
  */
-
 
 /**
  * @typedef {Object} UserProfile
@@ -25,29 +23,37 @@ const URL = getApiUrl("users");
  * @property {number[]} schools - An array of school IDs associated with the user.
  */
 
-
-
 /**
  * Get all Users.
+ * @param {"admin" | "controller" | "recruiter"} role
  * @returns {{ action: Promise<UserProfile[]>, cancel: function }}
  *  - `action` {Promise<User[]>}
  *  - `cancel` {function}
  */
-export const get = () => {
-  return addRequest(URL, "GET", (res) => {
-    if (res.data) {
-      if (res.data.length > 0) {
-        return res.data.map((item) => {
-          return {
-            ...item,
-            create_at: new Date(item.create_at),
-            updated_at: new Date(item.updated_at),
-          };
-        });
+export const get = (role = "") => {
+  return addRequest(
+    URL,
+    "GET",
+    (res) => {
+      if (res.data) {
+        if (res.data.length > 0) {
+          return res.data.map((item) => {
+            return {
+              ...item,
+              create_at: new Date(item.create_at),
+              updated_at: new Date(item.updated_at),
+            };
+          });
+        }
       }
+      return [];
+    },
+    {
+      params: {
+        r: role,
+      },
     }
-    return [];
-  });
+  );
 };
 
 /**
@@ -68,8 +74,6 @@ export const find = (id = 0) => {
     }
   });
 };
-
-
 
 /**
  * Create a new user.
