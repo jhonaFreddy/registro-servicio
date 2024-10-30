@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
 
                 <div className="flex flex-col items-center justify-between w-full ">
-                    <figure className='flex justify-center items-center mb-4'>
+                    <figure className='flex justify-center items-center mb-4 bg-white'>
                         <Image src={'/logoFunval.png'} width={300} height={200} alt='logo de Funval' className="w-full">
                         </Image>
                     </figure>
