@@ -44,7 +44,7 @@ axiosClient.interceptors.request.use(
  *
  * @template T - The type of data that the promise will resolve with.
  * @param {string} url - The URL to make the request to.
- * @param {"GET" | "POST" | "PUT" | "DELETE"} method - The HTTP method to use
+ * @param {"GET" | "POST" | "PUT" | "DELETE", "PATCH"} method - The HTTP method to use
  * @param {(res: import("axios").AxiosResponse<any,any>) => void} preData - A function to process the response data
  * @param {import("axios").AxiosRequestConfig} options - Additional options for the axios request.
  * @returns {{ action: Promise<T>, cancel: function }} An object with:
