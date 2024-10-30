@@ -1,6 +1,6 @@
 import { addRequest } from "./config";
 import { getApiUrl } from "../utils/url.utils";
-const URL = getApiUrl("schools");
+const URL = getApiUrl("roles");
 
 /**
  * @typedef {Object} BaseRole
