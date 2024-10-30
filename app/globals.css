@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 375px) {
+    #btns {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    #btns {
+        display:block;
+    }
+}
