@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 375px) {
+@media (min-width: 360px) {
     #btns {
         display: none;
     }
